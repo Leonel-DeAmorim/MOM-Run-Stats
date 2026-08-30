@@ -6,6 +6,9 @@ Event.onmessage = (event) => {
     
     const timeElement=document.getElementById("time");
     timeElement.textContent=data.time;
+    
+    const timerElement=document.getElementById("timer");
+    timerElement.textContent=data.timer.runTime;
 
     const positionElementX=document.getElementById("positionX");
     positionElementX.textContent=data.position.x;
@@ -46,11 +49,57 @@ Event.onmessage = (event) => {
     const moveTypeElement=document.getElementById("moveType");
     moveTypeElement.textContent=data.moveType;
 
-    const moveHudElement=document.getElementById("moveHud");
-    moveHudElement.textContent=data.moveHud;
+    //movehud
+    const wishVelElementX=document.getElementById("wishVelX");
+    wishVelElementX.textContent=data.moveHud.wishVel.x;
 
-    const lastTickElement=document.getElementById("lastTick");
-    lastTickElement.textContent=data.lastTick;
+    const wishVelElementY=document.getElementById("wishVelY");
+    wishVelElementY.textContent=data.moveHud.wishVel.y;
+
+    const wishVelElementZ=document.getElementById("wishVelZ");
+    wishVelElementZ.textContent=data.moveHud.wishVel.z;
+   
+    const moveStatusElement=document.getElementById("moveStatus");
+    moveStatusElement.textContent=data.moveHud.moveStatus;
+
+    const accelerationElement=document.getElementById("acceleration");
+    accelerationElement.textContent=data.moveHud.acceleration;
+
+    const maxspeedElement=document.getElementById("maxspeed");
+    maxspeedElement.textContent=data.moveHud.maxspeed;
+
+    const frictionElement=document.getElementById("friction");
+    frictionElement.textContent=data.moveHud.friction;
+
+    const hasteTimeElement=document.getElementById("hasteTime");
+    hasteTimeElement.textContent=data.moveHud.hasteTime;
+
+    const slickTimeElement=document.getElementById("slickTime");
+    slickTimeElement.textContent=data.moveHud.slickTime;
+
+    const flightTimeElement=document.getElementById("flightTime");
+    flightTimeElement.textContent=data.moveHud.flightTime;
+
+    const airJumpEnabledElement=document.getElementById("airJumpEnabled");
+    airJumpEnabledElement.textContent=data.moveHud.airJumpEnabled;
+
+    const canAirJumpElement=document.getElementById("canAirJump");
+    canAirJumpElement.textContent=data.moveHud.canAirJump;
+
+    ///lasttick
+    const strafeRightElement=document.getElementById("strafeRight");
+    strafeRightElement.textContent=data.lastTick.strafeRight;
+
+    const speedGainElement=document.getElementById("speedGain");
+    speedGainElement.textContent=data.lastTick.speedGain;
+
+    const idealGainElement=document.getElementById("idealGain");
+    idealGainElement.textContent=data.lastTick.idealGain;
+
+    const yawRatioElement=document.getElementById("yawRatio");
+    yawRatioElement.textContent=data.lastTick.yawRatio;
+
+    
 
     const duckingElement=document.getElementById("ducking");
     duckingElement.textContent=data.ducking;

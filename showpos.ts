@@ -65,6 +65,8 @@ if (children.length > 0) {
     const moveType = MomentumMovementAPI.GetMoveType();
     //Get movement related HUD information 
     const moveHud = MomentumMovementAPI.GetMoveHudData();
+    //Get Momentum Timer
+    const momTimer = MomentumTimerAPI.GetObservedTimerStatus();
     //Get statistics from the player's previous movement tick 
     const lastTick = MomentumMovementAPI.GetLastTickStats();
     //Get current game time 
@@ -88,6 +90,7 @@ if (children.length > 0) {
     strafeSync1: strafeSync1,
     moveType: moveType,
     moveHud: moveHud,
+    timer: momTimer,
     lastTick: lastTick,
     ducking: ducking,
     sprinting: sprinting,
