@@ -3,6 +3,8 @@ const http = require("http");
 //Use querystring module to parse data received in the HTTP request body
 const querystring = require("querystring");
 
+const fs = require("fs");
+
 let client=[];
 let latestData= null;
 
@@ -71,6 +73,59 @@ const server = http.createServer((req, res) => {
         return; 
        
     }
+
+
+    if(req.method === "GET" && req.url === '/'){
+        fs.readFile("Dashboard.html", (error,data) => { 
+            if(error){
+                res.writeHead(500,{"content-type": "text/plain"})
+                res.end("Server Error");
+                return;
+            }
+            else{
+                res.writeHead(200, {'Content-Type': 'text/html'});
+                res.end(data);
+            }
+        }
+    );
+    return;
+    }
+
+    
+    if(req.method === "GET" && req.url === '/Dashboard.css'){
+        fs.readFile("Dashboard.css", (error,data) =>{
+          if(error){
+                res.writeHead(500,{"content-type": "text/plain"})
+                res.end("Server Error");
+                return;
+            }
+            else{
+            res.writeHead(200, {'Content-Type': 'text/css'});
+            res.end(data);        
+            }
+
+        })
+        return;
+
+    }
+
+        if(req.method === "GET" && req.url === '/Dashboard.js'){
+        fs.readFile("Dashboard.js", (error,data) =>{
+          if(error){
+                res.writeHead(500,{"content-type": "text/plain"})
+                res.end("Server Error");
+                return;
+            }
+            else{
+            res.writeHead(200, {'Content-Type': 'text/javascript'});
+            res.end(data);        
+            }
+        })
+        return;
+        
+    }
+
+
 
     //Return a 404 Not Found response for requests that don't match the POST/test endpoint
     res.writeHead(404);
