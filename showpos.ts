@@ -58,9 +58,6 @@ if (children.length > 0) {
     const velocity = MomentumPlayerAPI.GetVelocity();
     //Get player's movement energy 
     const energy = MomentumPlayerAPI.GetEnergy();
-    //Get player's strafe synchronization data
-    const strafeSync0 = MomentumPlayerAPI.GetStrafeSync(0);
-    const strafeSync1 = MomentumPlayerAPI.GetStrafeSync(1);
     //Get movement related HUD information 
     const moveHud = MomentumMovementAPI.GetMoveHudData();
     //Get Momentum Timer
@@ -82,8 +79,6 @@ if (children.length > 0) {
     angles: angles,
     velocity: velocity,
     energy: energy,
-    strafeSync0: strafeSync0,
-    strafeSync1: strafeSync1,
     moveHud: moveHud,
     timer: momTimer,
     lastTick: lastTick,

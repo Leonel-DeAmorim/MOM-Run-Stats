@@ -40,12 +40,6 @@ Event.onmessage = (event) => {
     const energyElement=document.getElementById("energy");
     energyElement.textContent=data.energy;
 
-    const strafeSync0Element=document.getElementById("strafeSync0");
-    strafeSync0Element.textContent=data.strafeSync0;
-
-    const strafeSync1Element=document.getElementById("strafeSync1");
-    strafeSync1Element.textContent=data.strafeSync1;
-
     //movehud
     const wishVelElementX=document.getElementById("wishVelX");
     wishVelElementX.textContent=data.moveHud.wishVel.x;
