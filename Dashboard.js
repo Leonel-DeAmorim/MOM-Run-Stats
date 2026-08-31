@@ -1,15 +1,21 @@
+//Connect to the server's Server-Sent Events stream
 const Event = new EventSource("http://127.0.0.1:8080/event");
 
+//Handle new player data received from the server
 Event.onmessage = (event) => {
     console.log("IS RUNNING");
+    //Convert the received JSON string into a JavaScript object
     const data = JSON.parse(event.data)
     
-    const timeElement=document.getElementById("time");
-    timeElement.textContent=data.time;
+    //Update the player's game run time
+    const runTimeElement=document.getElementById("runTime");
+    runTimeElement.textContent=data.runTime;
     
+    //Update the player's run timer
     const timerElement=document.getElementById("timer");
     timerElement.textContent=data.timer.runTime;
 
+    //Update the player's X, Y, and Z position
     const positionElementX=document.getElementById("positionX");
     positionElementX.textContent=data.position.x;
     
@@ -19,6 +25,7 @@ Event.onmessage = (event) => {
     const positionElementZ=document.getElementById("positionZ");
     positionElementZ.textContent=data.position.z;
 
+    //Update the player's X, Y, and Z angles
     const anglesElementX=document.getElementById("anglesX");
     anglesElementX.textContent=data.angles.x;
     
@@ -28,6 +35,7 @@ Event.onmessage = (event) => {
     const anglesElementZ=document.getElementById("anglesZ");
     anglesElementZ.textContent=data.angles.z;
 
+    //Update the player's X, Y, and Z velocity
     const velocityElementX=document.getElementById("velocityX");
     velocityElementX.textContent=data.velocity.x;
 
@@ -37,11 +45,11 @@ Event.onmessage = (event) => {
     const velocityElementZ=document.getElementById("velocityZ");
     velocityElementZ.textContent=data.velocity.z;
 
+    //Update the player's movement energy
     const energyElement=document.getElementById("energy");
     energyElement.textContent=data.energy;
 
-
-    //movehud
+    //Update the player's X, Y and Z wish velocity
     const wishVelElementX=document.getElementById("wishVelX");
     wishVelElementX.textContent=data.wishVel.x;
 
@@ -51,10 +59,7 @@ Event.onmessage = (event) => {
     const wishVelElementZ=document.getElementById("wishVelZ");
     wishVelElementZ.textContent=data.wishVel.z;
    
- 
-
-
-    ///lasttick
+    //Update previous movement tick statistics
     const strafeRightElement=document.getElementById("strafeRight");
     strafeRightElement.textContent=data.lastTick.strafeRight;
 
@@ -67,15 +72,14 @@ Event.onmessage = (event) => {
     const yawRatioElement=document.getElementById("yawRatio");
     yawRatioElement.textContent=data.lastTick.yawRatio;
 
-    
-
+    //Update the player's ducking state
     const duckingElement=document.getElementById("ducking");
     duckingElement.textContent=data.ducking;
 
-    
+    //Update the player's physical input buttons
     const physicalButtonsElement=document.getElementById("physicalButtons");
     physicalButtonsElement.textContent=data.physicalButtons;
 
-
+    //Log the received data for debugging
     console.log("Data Update:", event.data);
 };

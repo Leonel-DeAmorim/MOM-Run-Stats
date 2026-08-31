@@ -65,7 +65,7 @@ if (children.length > 0) {
     //Get statistics from the player's previous movement tick 
     const lastTick = MomentumMovementAPI.GetLastTickStats();
     //Get current game time 
-    const currentTime = MomentumMovementAPI.GetCurrentTime();
+    const runTime = MomentumMovementAPI.GetCurrentTime();
     //Check which movement states the player is in 
     const ducking = MomentumPlayerAPI.IsDucking();
     //Get  player's input buttons 
@@ -74,7 +74,7 @@ if (children.length > 0) {
     //Combine all the collected player/game information into a single object
     //This object will be converted to JSON before being sent to the server
     const data = {
-    time: currentTime,
+    runTime: runTime,
     position: position,
     angles: angles,
     velocity: velocity,
@@ -99,7 +99,7 @@ if (children.length > 0) {
     const requestLoop = () => {
     ServerPost();
     //Schedule this function to run at delay 0
-    //This means we run it as the scheduling system allows which after testing appeared to be ~200 times a second or about every 5ms
+    //This means we run it as the scheduling system allows, which after testing appeared to be ~200 times a second or about every 5ms
     $.Schedule(0, requestLoop);
     };
     //Start data collection/sending loop
