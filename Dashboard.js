@@ -46,9 +46,6 @@ Event.onmessage = (event) => {
     const strafeSync1Element=document.getElementById("strafeSync1");
     strafeSync1Element.textContent=data.strafeSync1;
 
-    const moveTypeElement=document.getElementById("moveType");
-    moveTypeElement.textContent=data.moveType;
-
     //movehud
     const wishVelElementX=document.getElementById("wishVelX");
     wishVelElementX.textContent=data.moveHud.wishVel.x;
@@ -59,9 +56,6 @@ Event.onmessage = (event) => {
     const wishVelElementZ=document.getElementById("wishVelZ");
     wishVelElementZ.textContent=data.moveHud.wishVel.z;
    
-    const moveStatusElement=document.getElementById("moveStatus");
-    moveStatusElement.textContent=data.moveHud.moveStatus;
-
     const accelerationElement=document.getElementById("acceleration");
     accelerationElement.textContent=data.moveHud.acceleration;
 
@@ -71,20 +65,7 @@ Event.onmessage = (event) => {
     const frictionElement=document.getElementById("friction");
     frictionElement.textContent=data.moveHud.friction;
 
-    const hasteTimeElement=document.getElementById("hasteTime");
-    hasteTimeElement.textContent=data.moveHud.hasteTime;
 
-    const slickTimeElement=document.getElementById("slickTime");
-    slickTimeElement.textContent=data.moveHud.slickTime;
-
-    const flightTimeElement=document.getElementById("flightTime");
-    flightTimeElement.textContent=data.moveHud.flightTime;
-
-    const airJumpEnabledElement=document.getElementById("airJumpEnabled");
-    airJumpEnabledElement.textContent=data.moveHud.airJumpEnabled;
-
-    const canAirJumpElement=document.getElementById("canAirJump");
-    canAirJumpElement.textContent=data.moveHud.canAirJump;
 
     ///lasttick
     const strafeRightElement=document.getElementById("strafeRight");
@@ -104,12 +85,7 @@ Event.onmessage = (event) => {
     const duckingElement=document.getElementById("ducking");
     duckingElement.textContent=data.ducking;
 
-    const sprintingElement=document.getElementById("sprinting");
-    sprintingElement.textContent=data.sprinting;
-
-    const walkingElement=document.getElementById("walking");
-    walkingElement.textContent=data.walking;
-
+    
     const buttonsElement=document.getElementById("buttons");
     buttonsElement.textContent=data.buttons;
 

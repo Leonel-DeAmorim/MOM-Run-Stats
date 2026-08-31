@@ -61,8 +61,6 @@ if (children.length > 0) {
     //Get player's strafe synchronization data
     const strafeSync0 = MomentumPlayerAPI.GetStrafeSync(0);
     const strafeSync1 = MomentumPlayerAPI.GetStrafeSync(1);
-    //Get player's movement type 
-    const moveType = MomentumMovementAPI.GetMoveType();
     //Get movement related HUD information 
     const moveHud = MomentumMovementAPI.GetMoveHudData();
     //Get Momentum Timer
@@ -73,8 +71,6 @@ if (children.length > 0) {
     const currentTime = MomentumMovementAPI.GetCurrentTime();
     //Check which movement states the player is in 
     const ducking = MomentumPlayerAPI.IsDucking();
-    const sprinting = MomentumPlayerAPI.IsSprinting();
-    const walking = MomentumPlayerAPI.IsWalking();
     //Get  player's input buttons 
     const buttons = MomentumInputAPI.GetButtons();
 
@@ -88,13 +84,10 @@ if (children.length > 0) {
     energy: energy,
     strafeSync0: strafeSync0,
     strafeSync1: strafeSync1,
-    moveType: moveType,
     moveHud: moveHud,
     timer: momTimer,
     lastTick: lastTick,
     ducking: ducking,
-    sprinting: sprinting,
-    walking: walking,
     buttons: buttons
 };
     //Send collected data to local server 
