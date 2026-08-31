@@ -43,13 +43,13 @@ Event.onmessage = (event) => {
 
     //movehud
     const wishVelElementX=document.getElementById("wishVelX");
-    wishVelElementX.textContent=data.moveHud.wishVel.x;
+    wishVelElementX.textContent=data.wishVel.x;
 
     const wishVelElementY=document.getElementById("wishVelY");
-    wishVelElementY.textContent=data.moveHud.wishVel.y;
+    wishVelElementY.textContent=data.wishVel.y;
 
     const wishVelElementZ=document.getElementById("wishVelZ");
-    wishVelElementZ.textContent=data.moveHud.wishVel.z;
+    wishVelElementZ.textContent=data.wishVel.z;
    
  
 
@@ -73,8 +73,9 @@ Event.onmessage = (event) => {
     duckingElement.textContent=data.ducking;
 
     
-    const buttonsElement=document.getElementById("buttons");
-    buttonsElement.textContent=data.buttons;
+    const physicalButtonsElement=document.getElementById("physicalButtons");
+    physicalButtonsElement.textContent=data.physicalButtons;
+
 
     console.log("Data Update:", event.data);
 };

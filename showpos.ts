@@ -59,7 +59,7 @@ if (children.length > 0) {
     //Get player's movement energy 
     const energy = MomentumPlayerAPI.GetEnergy();
     //Get movement related HUD information 
-    const moveHud = MomentumMovementAPI.GetMoveHudData();
+    const wishVel = MomentumMovementAPI.GetMoveHudData().wishVel;
     //Get Momentum Timer
     const momTimer = MomentumTimerAPI.GetObservedTimerStatus();
     //Get statistics from the player's previous movement tick 
@@ -69,7 +69,7 @@ if (children.length > 0) {
     //Check which movement states the player is in 
     const ducking = MomentumPlayerAPI.IsDucking();
     //Get  player's input buttons 
-    const buttons = MomentumInputAPI.GetButtons();
+    const physicalButtons = MomentumInputAPI.GetButtons().physicalButtons;
 
     //Combine all the collected player/game information into a single object
     //This object will be converted to JSON before being sent to the server
@@ -79,11 +79,11 @@ if (children.length > 0) {
     angles: angles,
     velocity: velocity,
     energy: energy,
-    moveHud: moveHud,
+    wishVel: wishVel,
     timer: momTimer,
     lastTick: lastTick,
     ducking: ducking,
-    buttons: buttons
+    physicalButtons: physicalButtons
 };
     //Send collected data to local server 
     //Data object is converted to JSON and sent as payload
