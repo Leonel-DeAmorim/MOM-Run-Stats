@@ -40,6 +40,7 @@ Event.onmessage = (event) => {
     const energyElement=document.getElementById("energy");
     energyElement.textContent=data.energy;
 
+
     //movehud
     const wishVelElementX=document.getElementById("wishVelX");
     wishVelElementX.textContent=data.moveHud.wishVel.x;
@@ -50,15 +51,7 @@ Event.onmessage = (event) => {
     const wishVelElementZ=document.getElementById("wishVelZ");
     wishVelElementZ.textContent=data.moveHud.wishVel.z;
    
-    const accelerationElement=document.getElementById("acceleration");
-    accelerationElement.textContent=data.moveHud.acceleration;
-
-    const maxspeedElement=document.getElementById("maxspeed");
-    maxspeedElement.textContent=data.moveHud.maxspeed;
-
-    const frictionElement=document.getElementById("friction");
-    frictionElement.textContent=data.moveHud.friction;
-
+ 
 
 
     ///lasttick
