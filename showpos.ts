@@ -70,6 +70,12 @@ if (children.length > 0) {
     const ducking = MomentumPlayerAPI.IsDucking();
     //Get  player's input buttons 
     const physicalButtons = MomentumInputAPI.GetButtons().physicalButtons;
+    //Get player movement type
+    const moveType = MomentumMovementAPI.GetMoveType();
+    //Get Tick interval
+    const tickInterval = MomentumMovementAPI.GetTickInterval();
+    //Get map name
+    const mapName = MapCacheAPI.GetMapName();
 
     //Combine all the collected player/game information into a single object
     //This object will be converted to JSON before being sent to the server
@@ -83,6 +89,9 @@ if (children.length > 0) {
     timer: momTimer,
     lastTick: lastTick,
     ducking: ducking,
+    moveType: moveType,
+    tickInterval: tickInterval,
+    mapName: mapName,
     physicalButtons: physicalButtons
 };
     //Send collected data to local server 
