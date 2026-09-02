@@ -1,1 +1,177 @@
+/* Main page styling */
+body {
+    margin: 0;
+    padding: 0;
 
+    background: #0b0e13;
+    color: #e8edf5;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Dashboard header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 28px 40px;
+
+    background: #11151c;
+    border-bottom: 1px solid #252c36;
+}
+
+
+.dashboard-header h1 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+.subtitle {
+    margin: 6px 0 0;
+
+    color: #778292;
+    font-size: 14px;
+}
+
+
+
+/* Main dashboard container */
+.dashboard {
+    width: min(1400px, calc(100% - 60px));
+    margin: 30px auto;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;;
+}
+
+.last-tick-section {
+    grid-column: 1 / -1;
+}
+.last-tick-section .data-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+/* Individual data sections */
+.data-section {
+    margin-bottom: 25px;
+
+    padding: 20px;
+
+    background: #11151c;
+
+    border: 1px solid #252c36;
+    border-radius: 12px;
+}
+
+
+/* Section title */
+.data-section h2 {
+    margin: 0 0 16px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    color: #cbd3df;
+}
+
+
+/* Grid containing the cards */
+.data-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 12px;
+}
+
+
+/* Individual statistic card */
+.data-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 16px;
+
+    background: #171c23;
+
+    border: 1px solid #252d38;
+    border-radius: 8px;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+/* Card hover effect */
+.data-card:hover {
+    background: #1b212a;
+    border-color: #35404d;
+
+    transform: translateY(-1px);
+}
+
+
+/* Statistic label */
+.label {
+    color: #7f8a99;
+
+    font-size: 12px;
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+
+/* Statistic value */
+.value {
+    color: #e8edf5;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* Highlight important values */
+.value.highlight {
+    color: #55d6ff;
+}
+
+
+/* Responsive layout for smaller screens */
+@media (max-width: 650px) {
+
+    .dashboard-header {
+        padding: 22px 20px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .dashboard {
+        width: calc(100% - 30px);
+
+        margin-top: 20px;
+    }
+
+    .data-section {
+        padding: 15px;
+    }
+
+    .data-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

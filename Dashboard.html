@@ -14,104 +14,190 @@
 <body>
   
 
-   <p>
-    <span>Run Time: </span>
-    <span id="runTime"></span>
-</p>
-  <p>
-    <span>Timer: </span>
-    <span id="timer"></span>
-</p>
-<p>
-    <span>Position X: </span>
-    <span id="positionX"></span>
-</p>
-<p>
-    <span>Position Y: </span>
-    <span id="positionY"></span>
-</p>
-<p>
-    <span>Position Z: </span>
-    <span id="positionZ"></span>
-</p>
-<p>
-    <span>Angles X: </span>
-    <span id="anglesX"></span>
-</p>
-<p>
-    <span>Angles Y: </span>
-    <span id="anglesY"></span>
-</p>
-<p>
-    <span>Angles Z: </span>
-    <span id="anglesZ"></span>
-</p>
-<p>
-    <span>Velocity X: </span>
-    <span id="velocityX"></span>
-</p>
-<p>
-    <span>Velocity Y: </span>
-    <span id="velocityY"></span>
-</p>
-<p>
-    <span>Velocity Z: </span>
-    <span id="velocityZ"></span>
-</p>
-<p>
-    <span>Energy: </span>
-    <span id="energy"></span>
-</p>
+        <header class=""Dashboard-header">
+        <div>
+            <h1>Live Game Data</h1>
+        </div>
+        </header>
 
- <p>
-    <span>wishVelX: </span>
-    <span id="wishVelX"></span>
-</p>
-
-<p>
-    <span>wishVelY: </span>
-    <span id="wishVelY"></span>
-</p>
-
-<p>
-    <span>wishVelZ: </span>
-    <span id="wishVelZ"></span>
-</p>
-
-<!-- Last Tick Statistics -->
-
-<p>
-    <span>strafeRight: </span>
-    <span id="strafeRight"></span>
-</p>
-
-<p>
-    <span>speedGain: </span>
-    <span id="speedGain"></span>
-</p>
-
-<p>
-    <span>idealGain: </span>
-    <span id="idealGain"></span>
-</p>
-<p>
-    <span>yawRatio: </span>
-    <span id="yawRatio"></span>
-</p>
+ <main class="dashboard">
 
 
-<p>
-    <span>Ducking: </span>
-    <span id="ducking"></span>
-</p>
+        <!-- Run information -->
+        <section class="data-section">
+            <h2>Run Information</h2>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <span class="label">Run Time</span>
+                    <span class="value highlight" id="runTime">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Timer</span>
+                    <span class="value highlight" id="timer">--</span>
+                </div>
+
+            </div>
+        </section>
 
 
-<p>
-    <span>physicalButtons: </span>
-    <span id="physicalButtons"></span>
-</p>
+        <!-- Player position -->
+        <section class="data-section">
+            <h2>Position</h2>
 
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <span class="label">X</span>
+                    <span class="value" id="positionX">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Y</span>
+                    <span class="value" id="positionY">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Z</span>
+                    <span class="value" id="positionZ">--</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Player view angles -->
+        <section class="data-section">
+            <h2>View Angles</h2>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <span class="label">X</span>
+                    <span class="value" id="anglesX">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Y</span>
+                    <span class="value" id="anglesY">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Z</span>
+                    <span class="value" id="anglesZ">--</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Player velocity -->
+        <section class="data-section">
+            <h2>Velocity</h2>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <span class="label">X</span>
+                    <span class="value" id="velocityX">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Y</span>
+                    <span class="value" id="velocityY">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Z</span>
+                    <span class="value" id="velocityZ">--</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Movement information -->
+        <section class="data-section">
+            <h2>Movement</h2>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <span class="label">Energy</span>
+                    <span class="value" id="energy">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Wish Velocity X</span>
+                    <span class="value" id="wishVelX">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Wish Velocity Y</span>
+                    <span class="value" id="wishVelY">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Wish Velocity Z</span>
+                    <span class="value" id="wishVelZ">--</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Last movement tick statistics -->
+        <section class="data-section">
+            <h2>Last Tick Statistics</h2>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <span class="label">Strafe Right</span>
+                    <span class="value" id="strafeRight">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Speed Gain</span>
+                    <span class="value" id="speedGain">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Ideal Gain</span>
+                    <span class="value" id="idealGain">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Yaw Ratio</span>
+                    <span class="value" id="yawRatio">--</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Current player state -->
+        <section class="data-section">
+            <h2>Player State</h2>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <span class="label">Ducking</span>
+                    <span class="value" id="ducking">--</span>
+                </div>
+
+                <div class="data-card">
+                    <span class="label">Physical Buttons</span>
+                    <span class="value" id="physicalButtons">--</span>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 
 </body>
-
 </html>
