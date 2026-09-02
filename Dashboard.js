@@ -79,7 +79,17 @@ Event.onmessage = (event) => {
     //Update the player's physical input buttons
     const physicalButtonsElement=document.getElementById("physicalButtons");
     physicalButtonsElement.textContent=data.physicalButtons;
+    
+    //Update Move type
+    const moveTypeElement=document.getElementById("moveType");
+    moveTypeElement.textContent=data.moveType;
 
+    const tickIntervalElement=document.getElementById("tickInterval");
+    tickIntervalElement.textContent=data.tickInterval;
+
+    const mapNameElement=document.getElementById("mapName");
+    mapNameElement.textContent=data.mapName;
+    
     //Log the received data for debugging
     console.log("Data Update:", event.data);
 };

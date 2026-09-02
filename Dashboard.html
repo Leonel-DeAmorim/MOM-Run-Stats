@@ -14,7 +14,7 @@
 <body>
   
 
-        <header class=""Dashboard-header">
+        <header class="Dashboard-header">
         <div>
             <h1>Live Game Data</h1>
         </div>
@@ -30,6 +30,10 @@
             <div class="data-grid">
 
                 <div class="data-card">
+                    <span class="label">Map</span>
+                    <span class="value highlight" id="mapName">--</span>
+                </div>
+                <div class="data-card">
                     <span class="label">Run Time</span>
                     <span class="value highlight" id="runTime">--</span>
                 </div>
@@ -37,6 +41,11 @@
                 <div class="data-card">
                     <span class="label">Timer</span>
                     <span class="value highlight" id="timer">--</span>
+                </div>
+                
+                <div class="data-card">
+                    <span class="label">tickInterval</span>
+                    <span class="value highlight" id="tickInterval">--</span>
                 </div>
 
             </div>
@@ -123,6 +132,11 @@
             <h2>Movement</h2>
 
             <div class="data-grid">
+
+                <div class="data-card">
+                    <span class="label">moveType</span>
+                    <span class="value" id="moveType">--</span>
+                </div>
 
                 <div class="data-card">
                     <span class="label">Energy</span>
