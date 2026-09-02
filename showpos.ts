@@ -58,7 +58,7 @@ if (children.length > 0) {
     const velocity = MomentumPlayerAPI.GetVelocity();
     //Get player's movement energy 
     const energy = MomentumPlayerAPI.GetEnergy();
-    //Get movement related HUD information 
+    //Get movement wishVel 
     const wishVel = MomentumMovementAPI.GetMoveHudData().wishVel;
     //Get Momentum Timer
     const momTimer = MomentumTimerAPI.GetObservedTimerStatus();
