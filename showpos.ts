@@ -61,11 +61,19 @@ if (children.length > 0) {
     //Get movement wishVel 
     const wishVel = MomentumMovementAPI.GetMoveHudData().wishVel;
     //Get Momentum Timer
-    const momTimer = MomentumTimerAPI.GetObservedTimerStatus();
+    const runTimer = MomentumTimerAPI.GetObservedTimerStatus().runTime;
+    //Get Majornum
+    const majorNum = MomentumTimerAPI.GetObservedTimerStatus().majorNum;
+    //Get Minor num
+    const minorNum = MomentumTimerAPI.GetObservedTimerStatus().minorNum;
+    //Get seg countgame
+    const segmentsCount = MomentumTimerAPI.GetObservedTimerStatus().segmentsCount;
+    //Get check count
+    const segmentCheckpointsCount  = MomentumTimerAPI.GetObservedTimerStatus().segmentCheckpointsCount;
     //Get statistics from the player's previous movement tick 
     const lastTick = MomentumMovementAPI.GetLastTickStats();
     //Get current game time 
-    const runTime = MomentumMovementAPI.GetCurrentTime();
+    const gameTime = MomentumMovementAPI.GetCurrentTime();
     //Check which movement states the player is in 
     const ducking = MomentumPlayerAPI.IsDucking();
     //Get  player's input buttons 
@@ -76,17 +84,22 @@ if (children.length > 0) {
     const tickInterval = MomentumMovementAPI.GetTickInterval();
     //Get map name
     const mapName = MapCacheAPI.GetMapName();
+  
 
     //Combine all the collected player/game information into a single object
     //This object will be converted to JSON before being sent to the server
     const data = {
-    runTime: runTime,
+    runTime: runTimer,
     position: position,
     angles: angles,
     velocity: velocity,
     energy: energy,
     wishVel: wishVel,
-    timer: momTimer,
+    gameTime: gameTime,
+    majorNum: majorNum,
+    minorNum: minorNum,
+    segmentsCount: segmentsCount,
+    segmentCheckpointsCount: segmentCheckpointsCount,
     lastTick: lastTick,
     ducking: ducking,
     moveType: moveType,

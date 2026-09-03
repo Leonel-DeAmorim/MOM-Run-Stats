@@ -12,8 +12,23 @@ Event.onmessage = (event) => {
     runTimeElement.textContent=data.runTime;
     
     //Update the player's run timer
-    const timerElement=document.getElementById("timer");
-    timerElement.textContent=data.timer.runTime;
+  // Update the full timer information
+
+const timerElement = document.getElementById("timer");
+timerElement.textContent = data.gameTime;
+
+const majorNumElement = document.getElementById("majorNum");
+majorNumElement.textContent = data.majorNum;
+
+const minorNumElement = document.getElementById("minorNum");
+minorNumElement.textContent = data.minorNum;
+
+const segmentsCountElement = document.getElementById("segmentsCount");
+segmentsCountElement.textContent = data.segmentsCount;
+
+const segmentCheckpointsCountElement = document.getElementById("segmentCheckpointsCount");
+segmentCheckpointsCountElement.textContent = data.segmentCheckpointsCount;
+
 
     //Update the player's X, Y, and Z position
     const positionElementX=document.getElementById("positionX");
