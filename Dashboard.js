@@ -13,7 +13,7 @@ Event.onmessage = (event) => {
     
     //Update the player's run timer
   // Update the full timer information
-
+//Update stage and checkpoint information 
 const timerElement = document.getElementById("timer");
 timerElement.textContent = data.gameTime;
 
@@ -99,9 +99,11 @@ segmentCheckpointsCountElement.textContent = data.segmentCheckpointsCount;
     const moveTypeElement=document.getElementById("moveType");
     moveTypeElement.textContent=data.moveType;
 
+    //Update tick interval
     const tickIntervalElement=document.getElementById("tickInterval");
     tickIntervalElement.textContent=data.tickInterval;
 
+    //Update Map name
     const mapNameElement=document.getElementById("mapName");
     mapNameElement.textContent=data.mapName;
     
