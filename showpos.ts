@@ -84,6 +84,7 @@ if (children.length > 0) {
     const tickInterval = MomentumMovementAPI.GetTickInterval();
     //Get map name
     const mapName = MapCacheAPI.GetMapName();
+    const speed = Math.sqrt(velocity.x * velocity.x + velocity.y * velocity.y + velocity.z * velocity.z);
   
 
     //Combine all the collected player/game information into a single object
@@ -93,6 +94,7 @@ if (children.length > 0) {
     position: position,
     angles: angles,
     velocity: velocity,
+    speed: speed,
     energy: energy,
     wishVel: wishVel,
     gameTime: gameTime,
