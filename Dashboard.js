@@ -107,6 +107,9 @@ segmentCheckpointsCountElement.textContent = data.segmentCheckpointsCount;
     const mapNameElement=document.getElementById("mapName");
     mapNameElement.textContent=data.mapName;
     
+    //Update speed
+    const speedElement=document.getElementById("speed");
+    speedElement.textContent=data.speed;
     //Log the received data for debugging
     console.log("Data Update:", event.data);
 };
